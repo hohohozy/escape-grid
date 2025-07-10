@@ -4,7 +4,7 @@ import GameGrid from './GameGrid';
 export default function App() {
   return (
     <div>
-      <h1>Escape Grid 逃出生格</h1>
+      <h1>Escape Grid Game</h1>
       <GameGrid />
     </div>
   );
