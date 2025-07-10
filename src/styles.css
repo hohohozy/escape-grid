@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  gap: 2px;
+  margin: 20px auto;
+  width: fit-content;
+}
+.cell {
+  width: 40px;
+  height: 40px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cell.blocked { background: #333; }
+.cell.visited { background: #66ccff; }
+.cell.start { background: #6a0dad; color: white; }
+.cell.exit { background: #ff4500; color: white; }
