@@ -8,7 +8,7 @@ export default function GameGrid() {
     const g = Array.from({length: ROWS}, () =>
       Array.from({length: COLS}, () => ({ blocked: false, visited: false }))
     );
-    // 随机设置障碍
+    // Randomly set obstacles
     for (let i = 0; i < 20; i++) {
       const r = Math.floor(Math.random()*ROWS);
       const c = Math.floor(Math.random()*COLS);
@@ -42,16 +42,16 @@ export default function GameGrid() {
       if (path) {
         const sp = path.length - 1;
         if (best === null || sp < best) setBest(sp);
-        alert(`你用 ${steps} 步到达出口。\n最短路径需要 ${sp} 步。` +
-              (best===null || sp<best? "\n🎉 刷新了记录！":""));
+        alert(`You reached the exit in ${steps} steps.\nThe shortest path is ${sp} steps.` +
+              (best===null || sp<best? "\n🎉 New record set!":""));
       }
     }
   }, [current]);
 
   return (
     <div>
-      <div>当前步数：{steps}</div>
-      <div>最佳最短：{best ?? '-'}</div>
+      <div>Current Steps: {steps}</div>
+      <div>Best Shortest Path: {best ?? '-'}</div>
       <div className="grid">
         {grid.map((row,r) =>
           row.map((cell,c) => {
@@ -75,7 +75,7 @@ export default function GameGrid() {
         setGrid(createGrid());
         setCurrent([0,0]);
         setSteps(0);
-      }}>重开一局</button>
+      }}>Restart Game</button>
     </div>
   );
 }
